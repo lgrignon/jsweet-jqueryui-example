@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Demo</title>
+	<style type="text/css">
+	html, body {
+		margin: 0;
+		height: 100%;
+	}
+	.block {
+		position: absolute;
+		color: rgba(50, 50, 50, 0.3);
+		box-sizing: border-box;
+	}
+	#block1 {
+		padding-left: 1.5%;
+	}
+	#block2 {
+		padding-left: 2.5%;
+	}
+	</style>
+	
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/black-tie/jquery-ui.css" rel="stylesheet" type="text/css">
+	
+	<link rel="icon" type="image/png" href="../logo.png">
+	<link rel="shortcut icon" href="../logo.png">
+</head>
+<body>
+	<input type="text" id="date" name="date" />
+	
+	<ul id="menu">
+	  <li class="ui-state-disabled">Aberdeen</li>
+	  <li>Ada</li>
+	  <li>Adamsville</li>
+	  <li>Addyston</li>
+	  <li>Delphi
+	    <ul>
+	      <li class="ui-state-disabled">Ada</li>
+	      <li>Saarland</li>
+	      <li>Salzburg an der schönen Donau</li>
+	    </ul>
+	  </li>
+	  <li>Saarland</li>
+	  <li>Salzburg
+	    <ul>
+	      <li>Delphi
+	        <ul>
+	          <li>Ada</li>
+	          <li>Saarland</li>
+	          <li>Salzburg</li>
+	        </ul>
+	      </li>
+	      <li>Delphi
+	        <ul>
+	          <li>Ada</li>
+	          <li>Saarland</li>
+	          <li>Salzburg</li>
+	        </ul>
+	      </li>
+	      <li>Perch</li>
+	    </ul>
+	  </li>
+	  <li class="ui-state-disabled">Amesville</li>
+	</ul>
+
+	<div id="block1" class="block">J</div>
+	<div id="block2" class="block">Sweet</div>
+	
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+	<script src="../../target/js/org/jsweet/examples/jquery/JQueryExample.js"></script>
+</body>
+</html>
