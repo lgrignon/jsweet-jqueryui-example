@@ -1,27 +1,27 @@
 package org.jsweet.examples.jquery;
 
 import static def.jquery.Globals.$;
-import static jsweet.dom.Globals.console;
-import static jsweet.dom.Globals.document;
-import static jsweet.dom.Globals.setInterval;
-import static jsweet.dom.Globals.setTimeout;
-import static jsweet.dom.Globals.window;
-import static jsweet.util.StringTypes.dialog;
-import static jsweet.util.StringTypes.next;
-import static jsweet.util.Globals.array;
-import static jsweet.util.Globals.function;
+import static def.dom.Globals.console;
+import static def.dom.Globals.document;
+import static def.dom.Globals.setInterval;
+import static def.dom.Globals.setTimeout;
+import static def.dom.Globals.window;
+import static def.jqueryui.StringTypes.dialog;
+import static def.jqueryui.StringTypes.next;
+import static jsweet.util.Lang.array;
+import static jsweet.util.Lang.function;
 
 import java.util.function.Consumer;
 
-import jsweet.lang.Array;
-import jsweet.lang.Date;
-import jsweet.lang.Object;
+import def.js.Array;
+import def.js.Date;
+import def.js.Object;
 import def.jquery.JQuery;
 import def.jqueryui.jqueryui.Datepicker;
 import def.jqueryui.jqueryui.DatepickerOptions;
 
 public class JQueryExample {
-	
+
 	public static void main(String[] args) {
 		$(document).ready(() -> {
 			JQueryExample example = new JQueryExample();
@@ -47,12 +47,12 @@ public class JQueryExample {
 
 	JQuery datepicker;
 	JQuery menu;
-	
+
 	public JQueryExample() {
 
 		// uncomment to test mixins
 //		$(window).timer.pause();
-		
+
 		blockSize = $(window).width() / 10;
 
 		leftForMiddle = ($(window).width() / 2 - blockSize / 2) + "px";
@@ -83,22 +83,22 @@ public class JQueryExample {
 				});
 
 		buildBlockAnimationSequence();
-		
-		datepicker = $("#date").datepicker(new DatepickerOptions() {
-		}); 
-		
-		datepicker.datepicker(dialog, new Date());
-		
-		menu = $("#menu").menu();
-		
+
+		datepicker = ((def.jqueryui.JQuery) $("#date")).datepicker(new DatepickerOptions() {
+		});
+
+		((def.jqueryui.JQuery) datepicker).datepicker(dialog, new Date());
+
+		menu = ((def.jqueryui.JQuery) $("#menu")).menu();
+
 		setInterval(function(() -> {
 			console.log("next menu");
-			menu.menu(next);
+			((def.jqueryui.JQuery) menu).menu(next);
 		}), 1000);
 	}
 
 	private void buildBlockAnimationSequence() {
-		
+
 		// back
 		registerAnimationStep(0, "0", "0", "yellow");
 		registerAnimationStep(1, "0", "90%", "red");
@@ -136,6 +136,6 @@ public class JQueryExample {
 	public void start() {
 		blockAnimationSteps[0].accept(block1);
 		blockAnimationSteps[6].accept(block2);
-		
+
 	}
 }
